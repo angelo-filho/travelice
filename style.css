@@ -2,6 +2,7 @@
 
 :root {
   --main-blue: #2d77bd;
+  --main-white: #fff;
 }
 
 * {
@@ -9,45 +10,38 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  color: var(--main-white);
 }
 
-p,
-a,
-h1,
-h2 {
-  color: #fff;
+span {
+  color: var(--main-blue);
 }
 
-/* Background */
-body {
-  height: 100vh;
+.container {
+  width: 100vw;
+}
+
+.content-container {
   width: 90vw;
-  margin: auto;
-
-  background-position: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(imgs/background.jpg);
-  background-size: cover;
+  margin: 0 auto;
 }
 
 /* Header */
 header {
+  position: fixed;
+
+  padding-top: 2rem;
+}
+
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding-top: 2rem;
-
-  animation: up-to-down 1.5s;
 }
 
 #logo {
   font-weight: 600;
   cursor: pointer;
-}
-
-span {
-  color: var(--main-blue);
 }
 
 nav ul {
@@ -82,37 +76,40 @@ nav ul li a:hover::before {
   width: 100%;
 }
 
-/* Main */
-main {
+/* Home */
+#home {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  padding-top: 11rem;
+  height: 100vh;
 
-  animation: appear 2s;
+  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(imgs/background.jpg);
+  background-size: cover;
 }
 
-main h1 {
+#home h1 {
   font-size: 3rem;
   text-transform: uppercase;
 }
 
-main p {
+#home p {
   text-align: center;
   line-height: 25px;
 
   padding-bottom: 1.625rem;
 }
 
-main button {
+#home button {
   outline: none;
   background: none;
   cursor: pointer;
 
   padding: 0.5rem 4rem;
 
-  color: #fff;
   text-transform: uppercase;
   font-weight: 500;
 
@@ -121,24 +118,6 @@ main button {
   transition: 0.5s;
 }
 
-main button:hover {
+#home button:hover {
   background-color: var(--main-blue);
-}
-
-@keyframes up-to-down {
-  0% {
-    transform: translateY(-5rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
